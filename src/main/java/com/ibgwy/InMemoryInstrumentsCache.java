@@ -68,28 +68,8 @@ public class InMemoryInstrumentsCache implements InstrumentsCache {
    * MarketDataRequest updates
    */
   @Override
-  public void updateInstrument(int id, double price) {
-    Instrument instrument = instruments.get(id);
-
-    if (instrument == null) {
-      logger.error("Invalid instrument update " + id);
-      return;
-    }
-    instrument.setPrice(price);
+  public void addInstrument(Instrument instrument) {
+    Preconditions.checkNotNull(instrument);
+    instruments.put(instrument.getId(), instrument);
   }
-
-  /**
-   * MarketDataRequest updates
-   */
-  @Override
-  public void updateInstrument(int id, int qty) {
-    Instrument instrument = instruments.get(id);
-
-    if (instrument == null) {
-      logger.error("Invalid instrument update " + id);
-      return;
-    }
-    instrument.setQuantity(qty);
-  }
-
 }

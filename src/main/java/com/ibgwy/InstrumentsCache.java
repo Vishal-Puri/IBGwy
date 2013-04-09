@@ -9,7 +9,6 @@ public interface InstrumentsCache {
 
   Instrument getInstrument(int id);
 
-  void updateInstrument(int id, double price);
+  void addInstrument(Instrument instrument);
 
-  void updateInstrument(int id, int qty);
 }
