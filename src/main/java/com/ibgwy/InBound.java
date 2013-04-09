@@ -6,8 +6,6 @@ import com.ibgwy.events.InstrumentUpdate;
 import com.ibgwy.events.OrderAccepted;
 import com.ibgwy.events.OrderExecuted;
 
-import static com.ibgwy.IBApiHelper.IBOrderStatusCode;
-
 
 /**
  * TODO: Add JavaDoc!
@@ -107,14 +105,14 @@ public class InBound implements EWrapper {
   public void orderStatus(int orderId, String status, int filled, int remaining, double avgFillPrice, int permId,
                           int parentId, double lastFillPrice, int clientId, String whyHeld) {
 
-    if (status.equals(IBApiHelper.IBOrderStatusCode.Filled.name())) {
+    if (status.equals(IBApiHelper.OrderStatus.Filled.name())) {
       OrderExecuted event = new OrderExecuted();
       event.setId(orderId);
       event.setPrice(lastFillPrice);
       event.setFilled(filled);
       event.setRemaining(remaining);
       eventBus.post(event);
-    } else if (status.equals((IBOrderStatusCode.Submitted.name()))) {
+    } else if (status.equals((IBApiHelper.OrderStatus.Submitted.name()))) {
       OrderAccepted event = new OrderAccepted();
       eventBus.post(event);
     }

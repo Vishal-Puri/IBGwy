@@ -17,7 +17,7 @@ public class IBApiHelper {
 
   private static final Logger logger = LoggerFactory.getLogger(IBApiHelper.class);
 
-  public static enum IBOrderStatusCode {
+  public static enum OrderStatus {
 
     PendingSubmit,
 
