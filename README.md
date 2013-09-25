@@ -30,7 +30,7 @@ Bridge between our internal and IB types.
 
 Usage Example:
 ==============
-    Coming soon!
+    See TradingTerminal 
 
 
 
