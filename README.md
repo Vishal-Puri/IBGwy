@@ -6,8 +6,7 @@ Client to IB Socket API
 Design
 ======
 
-Event driven architecture using Google's EventBus https://code.google.com/p/guava-libraries/wiki/EventBusExplained. 
-
+Event driven architecture 
 
 Components
 ===========
@@ -31,8 +30,5 @@ Bridge between our internal and IB types.
 Usage Example:
 ==============
     See TradingTerminal 
-
-
-
-      
+   
 
